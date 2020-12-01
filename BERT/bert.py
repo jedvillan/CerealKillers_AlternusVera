@@ -42,7 +42,7 @@ class CerealKillers_SentimentClassifier(nn.Module):
     )
     input_ids = encoded_review['input_ids']
     attention_mask = encoded_review['attention_mask']
-    output = bert_model(input_ids, attention_mask)
+    output = self.forward(input_ids, attention_mask)
     _, prediction = torch.max(output,1)
     bert_score = 0
     if prediction.item() == 0:

@@ -31,7 +31,7 @@ class CerealKillers_SentimentClassifier(nn.Module):
     return self.out(output)
 
   def predict(self, review_text):
-    encoded_review = tokenizer.encode_plus(
+    encoded_review = self.tokenizer.encode_plus(
       review_text,
       max_length=512,
       add_special_tokens=True,

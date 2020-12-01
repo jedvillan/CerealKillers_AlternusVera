@@ -21,8 +21,7 @@ class CerealKillers_PsychologicalUtility:
   def predict(self, text, bt=0,f=0,ht=0,mt=0,po=0):
     rank_test = pd.DataFrame(np.array([[bt,f,ht,mt,po]]), columns=['BARELY TRUE', 'FALSE', 'HALF TRUE', 'MOSTLY TRUE', 'PANTS ON'])
     rank_score = self.predictor_rank.predict(rank_test)
-
-    sen_score = predictor_sts.predict_proba({"text": [text]})
+    sen_score = self.predictor_sts.predict_proba({"text": [text]})
 
     #print("RANK:", rank_score[0]/6)
     #print("SENTI:",sen_score[0][1])

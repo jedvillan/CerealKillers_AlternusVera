@@ -10,8 +10,8 @@ Original file is located at
 import autogluon.core as ag
 import pandas as pd
 import numpy as np
-from autogluon import TabularPrediction as task2
-from autogluon import TextPrediction as task
+from autogluon.tabular import TabularPrediction as task2
+from autogluon.text import TextPrediction as task
 
 class CerealKillers_PsychologicalUtility:
   def __init__(self):
